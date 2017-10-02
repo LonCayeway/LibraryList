@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Page Title</title>
+		<link rel="stylesheet" style type="text/css" href="style.css">
+		
+	</head>
+	<body>
+		
+		<ul id="books"></ul>
+		
+		
+			<!-- 
+		
+		If reading status is true display "Already read '<insert title>' by <insert author>."
+		
+		If reading status is false display "You still need to read '<insert title>' by <insert author>."
+		
+		Display results on a web page
+		
+		
+		=> need a function to loop through the array and identify true or false values in third position
+		
+		=> need a function to output two results, for true and false, for each set
+		
+		=> need the output to be on a web page so need the function to create web elements and fill them
+			
+		-->
+		
+		
+		<script type="text/javascript">
+	
+			
+			var library = [
+				{ author: 'Bill Gates', title: 'The Road Ahead', readingStatus: true },
+				{ author: 'Steve Jobs', title: 'Walter Isaacson', readingStatus: true },
+				{ author: 'Suzanne Collins', title: 'Mockingjay: The Final Book of The Hunger Games', readingStatus: false },
+			]
+			
+			var i = 0; 
+			while (i <= library.length){	
+			
+				if (library[i].readingStatus == true) {
+					var li = document.createElement('li');	
+					
+					li.innerHTML = ' Already read — ' + (library[i].title) +',' + ' by  ' + (library[i].author) + '.';
+					
+					li.style.fontSize = '30px';					
+					
+					document.getElementById('books').appendChild(li);
+				
+				
+				}else {
+					var li = document.createElement('li');	
+					
+					li.innerHTML = 'You still need to read — ' + (library[i].title) +',' + " by  " + (library[i].author) + '.';	
+					 
+					li.style.fontSize = '30px';					
+					
+					document.getElementById('books').appendChild(li);
+					
+				
+					}
+				i++	
+			}	
+						
+				
+		</script>
+		
+	</body>
+</html>
